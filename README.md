@@ -60,7 +60,7 @@
 
   ### If you are using Spring Tool Suite 
  -  Right Click On Project > Run As > Spring Boot App 
- -  Now in Browser Type Url: http://localhost:8080
+ -  Now in Browser Type Url: localhost:8080
  -  Note: In Url put Port according to your application.properties file
  -  or if port is not mention in application.properties you can check with default port.
  -  Application will get Open
@@ -72,7 +72,7 @@
   and save the file. 
   
  - Right Click On Project > Run as > Spring Boot App
- - Now in Browser Type Url: http://localhost:9002
+ - Now in Browser Type Url: localhost:9002
 -  Note: In Url put Port according to your application.properties file.
 -  or if port is not mention in application.properties you can check with default port.
  -  Application will get Open.
