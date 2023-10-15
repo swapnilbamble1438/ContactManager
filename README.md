@@ -28,7 +28,7 @@
 
 -  proceed -> Next
 
-            Now only select MySpring_Boot_aa17i_Contact_Manager\MySpring_Boot_aa17i_Contact_Manager
+            Now only select MySpring_Boot_aa17i_Contact_Manager\Contact_Manager
             -> Finish
    
 -  If everything goes right Project will get successfully imported
