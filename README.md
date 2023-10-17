@@ -1,6 +1,8 @@
 # ContactManager 
-## It is a Contact Management Application. 
 ### It is SpringBoot Project. Build in Spring Tool Suite.
+## It is a Contact Management Application. 
+- Users can manage their contacts
+- Add, Delete, Update their contacts.
 
 ### Technology used in this Project: 
 - i) Thymeleaf,CSS : designing page layout. 
