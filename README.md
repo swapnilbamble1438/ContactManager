@@ -3,6 +3,7 @@
 ## It is a Contact Management Application. 
 - Users can manage their contacts
 - Users can Add, Delete, Update their contacts.
+- Also added forgot paasword option which uses integrated mail api to send the OTP to specific user Email Id for resetting the password.
 
 ### Technology used in this Project: 
 - i) Thymeleaf,CSS : designing page layout. 
