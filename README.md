@@ -3,7 +3,7 @@
 ## It is a Contact Management Application. 
 - Users can manage their contacts
 - Users can Add, Delete, Update their contacts.
-- Also added forgot paasword option which uses integrated mail api to send the OTP to specific user Email Id for resetting the password.
+- Also added forgot paasword option which uses integrated mail api to send the OTP to the users Email Id (Users who forgotted their password) for resetting the password.
 
 ### Technology used in this Project: 
 - i) Thymeleaf,CSS : designing page layout. 
@@ -11,7 +11,7 @@
 - iii) MySQL: MySQL database has been used as database.
 - iv) SpringSecurity: SpringSecurity has been used for authentication.
 - v) Hibernate: Hibernate ORM is used.
-- vi) Email API: Email API is also used for sending OTP to users who forgotten their password.
+- vi) Email API: Email API is also used for sending OTP to the users who forgotted their password.
 
 
 ### Software And Tools Required:
