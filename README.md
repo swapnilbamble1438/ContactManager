@@ -1,6 +1,8 @@
 # ContactManager 
-### It is SpringBoot Project. Build in Spring Tool Suite.
+### It is SpringBoot Project with Thymeleaf Frontend. Build in Spring Tool Suite.
 ## It is a Contact Management Application. 
+
+### Application Features:
 - Users can manage their contacts
 - Users can Add, Delete, Update their contacts.
 - Also added forgot paasword option which uses integrated mail api to send the OTP to the users Email Id (Users who forgotted their password) for resetting the password.
