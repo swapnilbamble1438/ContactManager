@@ -61,6 +61,15 @@
    - also in
    - spring.mail.username= Put Your Gmail Id here
    - spring.mail.password= Put Your 16-digit App password for Gmail here
+ 
+   - Also do this Changes:
+             In UserrController in createorder handler at line no 403
+              var client = new RazorpayClient("Enter here your razorpay key_id", "Enter here your razorpay key_secret");
+
+             In src/main/resources/static/js/script.js at line not 140
+             key: "Enter here your razorpay key_id", 
+             
+     
    - Now save the changes.)
   - And Try to Run the Project
 
