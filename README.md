@@ -5,7 +5,8 @@
 ### Application Features:
 - Users can manage their contacts
 - Users can Add, Delete, Update their contacts.
-- Also added forgot paasword option which uses integrated mail api to send the OTP to the users Email Id (Users who forgotted their password) for resetting the password.
+- Also added forgot password option which uses integrated mail api to send the OTP to the users Email Id (Users who forgotted their password) for resetting the password.
+- Added Payment method using Razorpay Payment Integration.
 
 ### Technology used in this Project: 
 - i) Thymeleaf,CSS : designing page layout. 
