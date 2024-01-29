@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{user/base::layout(~{::section})}">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+		
+			<div class="card">
+				<div class="card-body my-5">
+					
+				<div class = "text-center">
+					<img style="height:200px" class="contact_profile_pic" th:src = "@{'/image/user.png'}" alt="profile photo">
+				</div>
+				
+				<h2 class="text-center mt-3 text-secondary font-italic font-weight-light">
+					Start Adding your contact on cloud...
+				
+				</h2>
+				
+				<a th:href="@{/user/addcontact}" class="mt-4 btn btn-primary btn-block text-uppercase">Add New Contact</a>
+				
+				
+<!----------------------- 1st Step of Payment Integration using Razorpay -->
+				<h3 class = "my-3">Donate Us</h3>
+				<input id="paymentfield" type = "text" class="form-control my-2" placeholder="Enter amount here">
+				
+				<div class="container text-center mt-4">
+					<button onclick="paymentStarted()" class="btn btn-success btn-block">Pay</button>
+				</div>
+				
+<!----------------------  1st Step End -->
+				
+				</div>
+			</div>
+			
+		</div>
+		
+		<!-- active link -->
+    <script>
+			
+			$(document).ready(()=>{
+				
+				$("#dashboard").addClass("active");
+				
+			});
+			
+		
+		</script>
+    
+    <!-- active link end -->
+		
+		
+	</section>
+</body>
+</html>

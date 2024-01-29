@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+	<!-- font-awesome cdnjs -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- sweetalert -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">	
+
+	<!-- sweetalert 2 -->
+	<link rel="stylesheet" type="text/css" href="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.css">
+	
+
+    <title th:text="${title}">base.html</title>
+    
+    
+     <script src='http://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js'></script> 
+  </head>
+  <body>
+    <!-- Navbar -->
+    
+    <nav class="fixed-top navbar navbar-expand-lg navbar-dark navbar bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" th:href="@{/}">Contact Manager</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      
+	      <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+	        <li class="nav-item">
+	          <a class="nav-link" >Welcome <span th:text="${userr.uname}"></span></a>	          
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" th:href="@{/user/}">User Dashboard</a>
+	        </li>
+	        
+	        <li class="nav-item">
+	          <a class="nav-link" th:href="@{/logout}">Logout</a>
+	        </li>
+	       
+	       
+	      </ul>
+      
+    </div>
+  </div>
+</nav>
+    
+    
+    <!-- Navbar End -->
+  
+  
+  	<!-- sidebar -->
+	<div class ="sidebar mt-2">
+	
+	<span onclick="toggleSidebar()" class ="crossBtn">&times;</span>
+	
+		<a id="dashboard"  th:href="@{/user/}" class="item"><i class="fas fa-home"></i> User Dashboard</a>
+		<a id="viewcontacts" th:href="@{/user/viewcontacts/0}" class="item"><i class="fas fa-id-card-alt"></i> View Contacts</a>
+		<a id="addcontact" th:href="@{/user/addcontact}" class="item"><i class="fas fa-pencil-alt"></i> Add Contact</a>
+		<a id="yourprofile" th:href="@{/user/profile}" class="item"><i class="fas fa-user-circle"></i>Your Profile</a>
+		<a id="settings" th:href="@{/user/settings}" class="item"><i class="fas fa-cogs"></i>Settings</a>
+		<a id="logout" th:href="@{/logout}" class="item"><i class="fas fa-sign-out-alt"></i>Logout</a>
+		<div class = "divider"></div>
+	
+	</div>	
+	<!-- sidebar end -->
+	
+	
+	
+	
+	<!-- content area -->
+	<div class="content mt-5">
+		
+		<i onclick="toggleSidebar()" class="fas fa-bars m-3"></i>
+	
+		
+		<!-- message box -->
+		<div th:if="${session.message}" class="container">
+		 <div th:classappend="${'alert-'+session.message.type}" class="alert text-center" role="alert">
+ 			<span th:text="${session.message.content}"></span>
+		</div>
+		
+		<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+		</div>
+		<!-- message box end -->
+		
+		    <div th:replace="${content}"></div>	
+		
+	</div>
+    <!-- content area end -->
+   <!-- optional -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+	
+		<script
+	  src="https://code.jquery.com/jquery-3.6.4.min.js"
+	  integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+	  crossorigin="anonymous"></script>
+  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  	<!-- optional end -->
+  	
+  
+  <!--Razorpay Start  -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  
+  <!--Razorpay End  -->
+    
+   <script th:src="@{/js/script.js}"></script>
+   
+   <!-- sweet alert -->
+   <script>
+ //  window.location="/user/delete/"+cid;
+   function deleteContact(cid) {
+	   
+	   
+	   Swal.fire({
+		   title: 'Are you sure?',
+		   text: 'you want to delete..',
+		   icon: 'warning',
+		   showCancelButton: true,
+		   confirmButtonText: 'Yes Delete it!',
+		   cancelButtonText: 'No Cancel it!',
+		 }).then((result) => {
+		   if (result.isConfirmed) {
+			   window.location="/user/delete/"+cid;
+
+		   }else{
+			   swal("Your contact is safe");  
+		   }
+			   
+		 })
+	   
+	   
+	 }
+   
+   
+   </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.js"></script>
+   
+    <!-- sweet alert end -->
+    
+    <!-- sweet alert 2 Start -->
+    
+    <script src="https://common.olemiss.edu/_js/sweet-alert/sweet-alert.min.js"></script>
+    
+    <!-- sweet alert 2 end -->
+    
+    <!-- show password in input field -->
+   
+   <script>
+function myFunction() {
+  var x = document.getElementById("password");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+
+// same but for different field
+function myFunction2() {
+	  var x = document.getElementById("password2");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+</script>
+   
+   <!-- show password end -->
+    
+    
+    
+  </body>
+</html>
